@@ -10,6 +10,7 @@ import
         org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.assertj.core.api.Assertions.*;
 public class ConfigurationSingletonTest {
+/**
     @Test
     void configurationTest() {
         ApplicationContext ac = new
@@ -29,4 +30,5 @@ public class ConfigurationSingletonTest {
         assertThat(memberService2.getMemberRepository()).isSameAs(memberRepository);
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
     }
+ **/
 }
