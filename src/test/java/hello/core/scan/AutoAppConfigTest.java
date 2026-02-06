@@ -5,6 +5,7 @@ import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
+import hello.core.order.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,8 +18,12 @@ public class AutoAppConfigTest {
 
         MemberService memberService = ac.getBean("memberServiceImpl",MemberService.class);
         assertThat(memberService).isInstanceOf(MemberService.class);
+
+        OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
+        MemberRepository memberRepository = bean.getMemberRepository();
+        assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
-/**
+        /**
     @Test
     void notComponentAutowired(){
         //스프링 빈이 아닌 클래스에서 @Autowired가 적용되는지 테스트해봄
