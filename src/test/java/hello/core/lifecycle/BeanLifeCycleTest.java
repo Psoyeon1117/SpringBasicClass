@@ -20,10 +20,11 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class LifeCycleConfig{
+//        @Bean(initMethod = "init", destroyMethod = "close")   //설정정보를 활용하는 방식
         @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
-            networkClient.setUrl("http:hello");
+            networkClient.setUrl("http://hello");
             return networkClient;
         }
     }
